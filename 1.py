@@ -2,7 +2,7 @@ from time import time
 from subprocess import run
 from os import name
 structure = "Чекаю {} день {}\n"
-out = ""
+out = "Нагадую, список можна розширити, напишіть мені.\n\n"
 t = int(time())
 with open("data.txt", "rt", encoding="UTF-8") as file:
  for entry in file.readlines():
