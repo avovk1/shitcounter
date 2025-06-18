@@ -1,10 +1,11 @@
 from time import time
 from subprocess import run
-from os import name
+from os import name, chdir
+chdir(__file__[:-4])
 structure = "Чекаю {} день {}\n"
 out = "Нагадую, список можна розширити, напишіть мені.\n\n"
 t = int(time())
-with open("data.txt", "rt", encoding="UTF-8") as file:
+with open("./data.txt", "rt", encoding="UTF-8") as file:
  for entry in file.readlines():
   entry = entry.replace("\n", "").split(";")
   out = out+structure.format(entry[0], (t-int(entry[1]))//86400)
